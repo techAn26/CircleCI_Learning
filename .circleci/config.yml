@@ -8,15 +8,15 @@ orbs:
 workflows:
   detect-workflow:
     jobs:
-      - path-filtering/filter:
-          name: Sample Front Workflow
-          mapping: |
-            front/.* front true
-          base-revision: main
-          config-path: ./front.yml
-          filters:
-            branches:
-              only: feature/circleci
+      # - path-filtering/filter:
+      #     name: Sample Front Workflow
+      #     mapping: |
+      #       front/.* front true
+      #     base-revision: main
+      #     config-path: ./front.yml
+      #     filters:
+      #       branches:
+      #         only: feature/circleci
 
       - path-filtering/filter:
           name: Sample Backend Workflow
