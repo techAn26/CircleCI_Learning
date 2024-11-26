@@ -1,0 +1,26 @@
+version: 2.1
+
+parameters:
+  addNum:
+    type: boolean
+    default: false
+  multipleNum:
+    type: boolean
+    default: false
+
+orbs:
+  node: circleci/node@6.3.0
+
+executors:
+  default:
+    working_directory: ~/project
+    docker:
+      - image: cimg/base:stable
+
+workflows:
+  version: 2
+  setup-and-test:
+    when: or(<<parameters.addNum>>, <<parameters.multipleNum>>)
+    jobs:
+      - node/install-packages
+      - node/run-tests
