@@ -10,8 +10,8 @@ workflows:
     jobs:
       - path-filtering/filter:
           name: Sample Front Workflow
-          mapping:
-            - front/.* front true
+          mapping: |
+            front/.* front true
           base-revision: main
           config-path: ./front.yml
           filters:
@@ -20,9 +20,9 @@ workflows:
 
       - path-filtering/filter:
           name: Sample Backend Workflow
-          mapping:
-            - backend/src/calc/addNum.ts addNum true
-            - backend/src/calc/multipleNum.ts multipleNum true
+          mapping: |
+            backend/src/calc/addNum.ts addNum true
+            backend/src/calc/multipleNum.ts multipleNum true
           base-revision: main
           config-path: ./backend.yml
           filters:
